@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="notify()">Show Notification</button>
+    <script>
+      function notify() {
+        Notification.requestPermission().then(permission => {
+          if (permission === "granted") {
+            new Notification("Test", { body: "Notification is working!" });
+          } else {
+            alert("Permission not granted: " + permission);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
